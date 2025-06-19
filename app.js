@@ -188,7 +188,7 @@ nums.forEach((num) => {
   if (num % 3 === 0) {
     fizz.push(num);
   }
-  else if (num % 5 === 0) {
+  if (num % 5 === 0) {
     buzz.push(num);
   }
   if (num % 5 === 0 && num % 3 === 0) {
@@ -200,6 +200,10 @@ console.log('Exercise 12 Results:');
 console.log('  fizz:', fizz);
 console.log('  buzz:', buzz);
 console.log('  fizzbuzz:', fizzbuzz);
+
+/* 
+1. You don't need an else if statement for "buzz". 
+*/
 
 
 /*
@@ -253,25 +257,23 @@ Hint: Be sure to declare and initialize the total variable before the iterations
 
 Complete Exercise 15 in the space below:
 
-NOT COMPLETE
+CORRECTED IN CLASS
 
 */
 
-let total = 0 ;
+let total = 0;
 
-numArrays.forEach((num) => {
-total = total + num;
-});
+for (let row = 0; row < numArrays.length; row++) {
+    for (let col = 0; col < numArrays[row].length; col++) {
+        total += numArrays[row][col];
+    }
+}
+
 
 console.log('Exercise 15 result:\n', total);
 
 
-/* "To loop through a two-dimensional array, you’ll typically use nested loops: 
-one loop for the rows and another for the columns within each row." 
-
-  for (let row = 0; row < numArray.length; row++);
-        for (let col = 0; col < numArray[row].length; col++); 
-
-Maybe like this?
-		
+/* 
+1. Don't use semi-colons at the end of loops because they finish early.
+2. total += numArrays[row][col] is how you add them up.	
 */
